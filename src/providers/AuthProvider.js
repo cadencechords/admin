@@ -14,7 +14,11 @@ export default function AuthProvider(props) {
   return (
     <AuthContext.Provider
       {...props}
-      value={{ currentUser: data || currentUser, setCurrentUser, isLoading }}
+      value={{
+        currentUser: data || currentUser,
+        setCurrentUser,
+        isLoading: isLoading && !currentUser,
+      }}
     />
   );
 }
