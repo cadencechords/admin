@@ -9,7 +9,7 @@ export default function Layout({ children }) {
 
   return (
     <AppShell navbar={isMobile ? null : <Sidenav />} header={<Topnav />}>
-      <Container>{children}</Container>
+      <Container px={0}>{children}</Container>
     </AppShell>
   );
 }
