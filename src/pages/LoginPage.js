@@ -39,6 +39,7 @@ export default function LoginPage() {
           required
           value={email}
           onChange={e => setEmail(e.target.value)}
+          autoComplete="email username"
         />
         <PasswordInput
           label="Password"
@@ -47,6 +48,8 @@ export default function LoginPage() {
           mt="md"
           value={password}
           onChange={e => setPassword(e.target.value)}
+          id="current-password"
+          autoComplete="current-password"
         />
         <Button
           fullWidth

@@ -2,7 +2,7 @@ import { useQuery } from '@tanstack/react-query';
 import * as authApi from '../../api/auth.api';
 
 export default function useCurrentUser({ onSuccess, enabled } = {}) {
-  const { isLoading, data } = useQuery({
+  const { isLoading, data, fetchStatus } = useQuery({
     queryKey: ['me'],
     queryFn: async () => {
       return (await authApi.getMe()).data;
@@ -11,5 +11,5 @@ export default function useCurrentUser({ onSuccess, enabled } = {}) {
     onSuccess,
     retry: false,
   });
-  return { isLoading, data };
+  return { isLoading: isLoading && fetchStatus === 'fetching', data };
 }

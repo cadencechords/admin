@@ -17,7 +17,7 @@ export default function AuthProvider(props) {
       value={{
         currentUser: data || currentUser,
         setCurrentUser,
-        isLoading: isLoading && !currentUser,
+        isLoading: isLoading,
       }}
     />
   );
