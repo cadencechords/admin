@@ -1,24 +1,28 @@
-import logo from './logo.svg';
-import './App.css';
+import { MantineProvider } from '@mantine/core';
+import Routes from './Routes';
+import AuthProvider from './providers/AuthProvider';
+import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
+import { ReactQueryDevtools } from '@tanstack/react-query-devtools';
+import { NotificationsProvider } from '@mantine/notifications';
+
+const queryClient = new QueryClient();
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <QueryClientProvider client={queryClient}>
+      <MantineProvider
+        withGlobalStyles
+        withNormalizeCSS
+        theme={{ defaultRadius: 'xl' }}
+      >
+        <NotificationsProvider autoClose={1500}>
+          <AuthProvider>
+            <Routes />
+          </AuthProvider>
+        </NotificationsProvider>
+      </MantineProvider>
+      <ReactQueryDevtools initialIsOpen={false} />
+    </QueryClientProvider>
   );
 }
 
