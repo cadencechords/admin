@@ -13,7 +13,14 @@ function App() {
       <MantineProvider
         withGlobalStyles
         withNormalizeCSS
-        theme={{ defaultRadius: 'xl' }}
+        theme={{
+          defaultRadius: 'xl',
+          globalStyles: _ => ({
+            input: {
+              fontSize: '16px !important',
+            },
+          }),
+        }}
       >
         <NotificationsProvider autoClose={1500}>
           <AuthProvider>

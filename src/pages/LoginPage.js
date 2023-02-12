@@ -40,8 +40,11 @@ export default function LoginPage() {
           value={email}
           onChange={e => setEmail(e.target.value)}
           autoComplete="email username"
+          autoCapitalize={false}
+          styles={{ input: { fontSize: 16 } }}
         />
         <PasswordInput
+          styles={{ input: { fontSize: 16 } }}
           label="Password"
           placeholder="Your password"
           required
@@ -50,6 +53,7 @@ export default function LoginPage() {
           onChange={e => setPassword(e.target.value)}
           id="current-password"
           autoComplete="current-password"
+          autoCapitalize={false}
         />
         <Button
           fullWidth
