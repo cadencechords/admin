@@ -38,7 +38,7 @@ export default function TeamDetailPage() {
           />
           <Detail
             label="Created"
-            value={format({ date: team.created_at, format: 'ddd MMM d, YYYY' })}
+            value={format({ date: team.created_at, format: 'ddd MMM D, YYYY' })}
           />
           <Detail label="Plan" value={team.subscription?.plan_name} />
         </SimpleGrid>

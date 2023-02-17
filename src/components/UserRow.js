@@ -31,7 +31,7 @@ export default function UserRow({ user, showExtraData = true }) {
                   Joined{' '}
                   {format({
                     date: user.created_at,
-                    format: 'ddd MMM DD, YYYY',
+                    format: 'ddd MMM D, YYYY',
                   })}
                 </Text>
               </Flex>

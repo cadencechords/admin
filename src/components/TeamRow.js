@@ -18,7 +18,7 @@ export default function TeamRow({ team }) {
           <Text c="dimmed">·</Text>
           <Text size="xs" color="dimmed">
             Created{'  '}
-            {format({ date: team.created_at, format: 'ddd MMM d, YYYY' })}
+            {format({ date: team.created_at, format: 'ddd MMM D, YYYY' })}
           </Text>
         </Flex>
       </Box>
