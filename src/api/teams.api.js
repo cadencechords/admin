@@ -11,3 +11,7 @@ export function getOne(id) {
 export function getRoles(id) {
   return api.get(`/admin/teams/${id}/roles`);
 }
+
+export function getSongs(id) {
+  return api.get(`/admin/teams/${id}/songs`);
+}
